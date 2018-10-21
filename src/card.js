@@ -5,7 +5,7 @@ class CardApp extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            propiedades : []
+            properties : []
         }
     }
     
@@ -14,21 +14,22 @@ class CardApp extends React.Component{
         .then((response) => {
             return response.json()
         })
-        .then((propiedades) => {
-            this.setState({ propiedades: propiedades })
+        .then((properties) => {
+            this.setState({ properties: properties })
         })
     }
 
     render(){
-        console.log(this.state.propiedades.propiedades);
-        if(this.state.propiedades.length > 0){
+        console.log(this.state.properties.propiedades);
+        if(this.state.properties.length > 0){
             return (
                 <div>
-                    <PropertiesList list={this.state.propiedades} />
+                    <PropertiesList list={this.state.properties} />
                 </div>
             )
         }
-        return <p className="mesage_wait"> Please wait...</p> 
+        return <span className="mesage_wait"> Please wait...</span> 
+        
     }
 }
 
